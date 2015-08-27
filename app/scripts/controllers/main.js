@@ -8,10 +8,24 @@
  * Controller of the hyraxApp
  */
 angular.module('hyraxApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl', [
+    '$scope',
+    '$mdSidenav',
+    '$http',
+    function($scope, $mdSidenav, $http){
+
+      $http.get('/data/elements.json')
+      .success(function(data, status, headers, config) {
+        $scope.posts = data;
+        console.log(data);
+      })
+      .error(function(data, status, headers, config) {
+        // log error
+        console.log('Bug');
+      });
+
+      $scope.toggleSidenav = function(menuId) {
+        $mdSidenav(menuId).toggle();
+      };
+    }
+  ]);
