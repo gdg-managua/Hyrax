@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
@@ -22,36 +23,29 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-controller="MainCtrl">
+    <header ng-controller="MainCtrl">
       <md-content>
         <md-toolbar>
           <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" aria-label="Settings">
-              <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
-            </md-button>
             <h2>
               <span>Hyrax</span>
             </h2>
-            <span flex></span>
-            <md-button class="md-icon-button" aria-label="Favorite">
-              <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
-            </md-button>
-            <md-button class="md-icon-button" aria-label="More">
-              <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
-            </md-button>
           </div>
         </md-toolbar>
       </md-content>
-    </div>
+    </header>
 
-    <div ng-view="">
-    </div>
+    <main ng-view="">
+    </main>
 
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> By GDG Managua With <3</p>
+    <footer>
+      <div class="footer-love">
+        <p>With <i class="material-icons">favorite</i> By GDG Managua</p>
       </div>
-    </div>
+      <div class="footer-gdg">
+        <p>DevFest 2015</p>
+      </div>
+    </footer>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
