@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-var app = angular
+angular
   .module('hyraxApp', [
     'ngAnimate',
     'ngCookies',
@@ -34,14 +34,3 @@ var app = angular
         redirectTo: '/'
       });
   });
-
-app
-  .controller('hyraxCtrl', [
-    '$scope',
-    '$mdSidenav',
-    function($scope, $mdSidenav){
-      $scope.toggleSidenav = function(menuId) {
-        $mdSidenav(menuId).toggle();
-      };
-    }
-  ]);
