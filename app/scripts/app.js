@@ -8,14 +8,15 @@
  *
  * Main module of the application.
  */
-angular
+var app = angular
   .module('hyraxApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngMaterial'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -33,3 +34,14 @@ angular
         redirectTo: '/'
       });
   });
+
+app
+  .controller('hyraxCtrl', [
+    '$scope',
+    '$mdSidenav',
+    function($scope, $mdSidenav){
+      $scope.toggleSidenav = function(menuId) {
+        $mdSidenav(menuId).toggle();
+      };
+    }
+  ]);
