@@ -1,8 +1,29 @@
+<div class="gridListdemoBasicUsage">
+  <md-grid-list md-cols-sm="2" md-cols-md="4" md-cols-lg="4" md-cols-gt-lg="4" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
+
+    <md-grid-tile class="{{ post.color }}" ng-repeat="post in posts">
+      <span>{{ post.title }}</span>
+
+      <md-grid-tile-footer>
+
+        <md-switch ng-model="data.cb1" aria-label="{{ post.title }}" ng-true-value="'yup'" ng-false-value="'nope'" ng-change="onChange(data.cb1)" class="md-warn">-->
+          Switch 2 (md-warn): {{ data.cb1 }} {{ message }}
+        </md-switch>
+
+      </md-grid-tile-footer>
+
+    </md-grid-tile>
+
+  </md-grid-list>
+</div>
+
 <div layout="row">
-  <div flex="25" ng-repeat="post in posts">
-    <span>{{ post.title }}</span>
-    <md-switch ng-model="data.cb1" aria-label="{{ post.title }}" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
-      Switch 2 (md-warn): {{ data.cb1 }}
-    </md-switch>
+  <div flex="75">
+    <p>Your current sponsor type is: {{ sponsor_type }} </p>
+  </div>
+  <div flex="25">
+    <span>Current total mount</span>
+    <span>{{ total_mount }}</span>
   </div>
 </div>
+
