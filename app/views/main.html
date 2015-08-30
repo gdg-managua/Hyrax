@@ -1,13 +1,12 @@
-<div class="gridListdemoBasicUsage">
+<div class="gridList">
   <md-grid-list md-cols-sm="2" md-cols-md="4" md-cols-lg="4" md-cols-gt-lg="4" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
 
     <md-grid-tile class="{{ post.color }}" ng-repeat="post in posts">
-      <span>{{ post.title }}</span>
+      <span class="post">{{ post.title }}</span>
 
       <md-grid-tile-footer>
 
-        <md-switch ng-model="data.cb1" aria-label="{{ post.title }}" ng-true-value="'yup'" ng-false-value="'nope'" ng-change="onChange(data.cb1)" class="md-warn">-->
-          Switch 2 (md-warn): {{ data.cb1 }} {{ message }}
+        <md-switch ng-model="data.cb1" aria-label="{{ post.title }}" ng-true-value="'yup'" ng-false-value="'nope'" ng-change="onChange(data.cb1)" class="md-warn pull-left">
         </md-switch>
 
       </md-grid-tile-footer>
