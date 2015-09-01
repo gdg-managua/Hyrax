@@ -1,13 +1,13 @@
 <div class="gridList">
   <md-grid-list md-cols-sm="2" md-cols-md="4" md-cols-lg="4" md-cols-gt-lg="4" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
 
-    <md-grid-tile class="{{ element.color }}" ng-repeat="element in elements">
-      <span class="post">{{ element.title }}</span>
+    <md-grid-tile class="{{ item.color }}" ng-repeat="item in elements">
+    <span class="post">{{ item.title }}</span>
 
       <md-grid-tile-footer>
 
-        <md-switch ng-model="element" aria-label="{{ element.title }}" ng-true-value="{{ element.price }}" ng-false-value="0" ng-change="addElement(element)" class="md-warn pull-left">
-        </md-switch>
+      <md-switch ng-model="element" aria-label="{{ item.id }}" ng-true-value="{{ item.price }}" ng-false-value="0" ng-change="newElement({{ item.id }}, element)" class="md-warn pull-left">
+      </md-switch>
 
       </md-grid-tile-footer>
 
