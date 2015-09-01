@@ -27,21 +27,43 @@ angular.module('hyraxApp')
         $mdSidenav(menuId).toggle();
       };
 
-      $scope.addElement = function(element) {
-        console.log(element);
-  	    $scope.mount = totalMount(element);
-        $scope.type = sponsorType();
-      };
+      var items = [];
 
-      var totalMount = function(element) {
-        var total = [];
-        total += element;
+      var totalMount = function() {
+        var total = 0;
+        for (var i = 0; i < items.length; i++) {
+          total += items[i].value;
+        }
         return total;
       };
 
       var sponsorType = function() {
         var type = 'Juanito';
         return type;
+      };
+
+      var removeElement = function(id) {
+        for (var i = 0; i < items.length; i++) {
+          if (items[i].key === id) {
+              delete items[i];
+          }
+        }
+      };
+
+      var addElement = function(id, price) {
+        items.push({key: id, value: price});
+      };
+
+      $scope.newElement = function(id, price) {
+        console.log(id, price);
+        if ( price === 0 ) {
+          removeElement(id);
+        } else {
+          addElement(id, price);
+        }
+
+  	    $scope.mount = totalMount();
+        $scope.type = sponsorType();
       };
 
     }
