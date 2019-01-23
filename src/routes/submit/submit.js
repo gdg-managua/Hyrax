@@ -1,10 +1,10 @@
 import { Component } from 'preact';
-import styles from './styles';
+import style from './style';
 
 export default class Submit extends Component {
 	render() {
 		return (
-			<div class={styles.submit}>
+			<div class={style.submit}>
 				<form>
 					<div>
 						<label>

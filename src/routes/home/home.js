@@ -1,10 +1,10 @@
-import Submit from '../submit/submit';
+import Meetup from '../meetup/Meetup';
 import style from './style';
 
 const Home = () => (
 	<div class={style.home}>
-		<h1>Tell us your idea.</h1>
-		<Submit />
+		<h1>Tell us your idea</h1>
+		<Meetup />
 	</div>
 );
 
